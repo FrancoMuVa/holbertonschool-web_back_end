@@ -4,14 +4,15 @@
     spawn wait_random n times with the specified max_delay.
 """
 import asyncio
+from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_deley: int) -> list[float]:
+async def wait_n(n: int, max_deley: int) -> List[float]:
     """ Returns the list of all the delays in ascending order """
-    deleys: list = [wait_random(max_deley) for _ in range(n)]
-    all_deleys: list = await asyncio.gather(*deleys)
-    sorted_deleys: list[float] = []
+    deleys: List = [wait_random(max_deley) for _ in range(n)]
+    all_deleys: List = await asyncio.gather(*deleys)
+    sorted_deleys: List[float] = []
     for _ in range(n):
         min_deley = min(all_deleys)
         sorted_deleys.append(min_deley)
