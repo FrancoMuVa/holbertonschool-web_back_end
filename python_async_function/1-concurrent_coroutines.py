@@ -8,9 +8,9 @@ from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_deley: int) -> List[float]:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """ Returns the list of all the delays in ascending order """
-    deleys: List = [wait_random(max_deley) for _ in range(n)]
+    deleys: List = [wait_random(max_delay) for _ in range(n)]
     all_deleys: List = await asyncio.gather(*deleys)
     sorted_deleys: List = []
     for _ in range(n):
