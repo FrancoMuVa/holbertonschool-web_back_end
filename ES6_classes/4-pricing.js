@@ -1,11 +1,5 @@
 export default class {
   constructor(amount, currency) {
-    // if (typeof amount !== 'number') {
-    //   throw TypeError('amount must be a number');
-    // }
-    // if (typeof currency !== 'Currency') {
-    //   throw TypeError('currency must be a Currency');
-    // }
     this._amount = amount;
     this._currency = currency;
   }
@@ -15,9 +9,6 @@ export default class {
   }
 
   set amount(value) {
-    // if (typeof value !== 'number') {
-    //   throw TypeError('amount must be a number');
-    // }
     this._amount = value;
   }
 
@@ -26,9 +17,6 @@ export default class {
   }
 
   set currency(value) {
-    // if (typeof value !== 'Currency') {
-    //   throw TypeError('currency must be a Currency');
-    // }
     this._currency = value;
   }
 
@@ -37,9 +25,6 @@ export default class {
   }
 
   static convertPrice(amount, conversionRate) {
-    // if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
-    //   throw TypeError('amount and conversionRate must be a number');
-    // }
     return amount * conversionRate;
   }
 }
