@@ -3,18 +3,18 @@ const uploadPhoto = require('./5-photo-reject.js').default;
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
   const userRes = signUpUser(firstName, lastName)
-    .then((res) => ({
+    .then((value) => ({
         status: 'fulfilled',
-        value: res,
+        value,
     }))
     .catch((err) => ({
       status: 'rejected',
       value: err,    
     }));
     const photoRes = uploadPhoto(fileName)
-    .then((res) => ({
+    .then((value) => ({
         status: 'fulfilled',
-        value: res,
+        value,
     }))
     .catch((err) => ({
       status: 'rejected',
