@@ -1,5 +1,5 @@
-const {signUpUser} = require('./4-user-promise.js');
-const {uploadPhoto} = require('./5-photo-reject.js');
+const signUpUser = require('./4-user-promise.js').default;
+const uploadPhoto = require('./5-photo-reject.js').default;
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
   const userRes = signUpUser(firstName, lastName)
