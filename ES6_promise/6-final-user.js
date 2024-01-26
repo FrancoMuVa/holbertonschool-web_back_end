@@ -21,5 +21,5 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
       value: err,    
     }));
     const arrayPromises = [userRes, photoRes];
-    return Promise.all(arrayPromises);
+    return Promise.allSettled(arrayPromises);
 }
