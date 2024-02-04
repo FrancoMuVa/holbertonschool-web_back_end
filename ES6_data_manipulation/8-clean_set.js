@@ -1,13 +1,13 @@
 export default function cleanSet(set, startString) {
-  if (startString === '') return '';
+  if (startString === '' || typeof startString !== 'string') return '';
   let StrConCat = '';
   for (const item of set) {
-    const splitSttr = item.split(startString);
-    if (splitSttr.length > 1) {
-      if (StrConCat !== '') {
-        StrConCat += '-';
+    if (item && item.startsWith(startString)) {
+      if (StrConCat.length === 0) {
+        StrConCat += item.replace(startString, '');
+      } else {
+        StrConCat += item.replace(startString, '-');
       }
-      StrConCat += splitSttr[1];
     }
   }
   return StrConCat;
